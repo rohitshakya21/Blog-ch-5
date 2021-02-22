@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Blog | List</title>
+		<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	</head>
+	<body>
+		{% block content %}
+			<ul>
+				{% for post in posts_list %}
+					<li><a href="/detail/{{ post.id }}">{{ post.title }}</a></li>
+					<p>{{ post.body }}</p>
+				{% endfor %}
+			</ul>
+		{% endblock %}
+	</body>
+</html>

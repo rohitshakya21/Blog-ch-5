@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Blog | Detail</title>
+		<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+	</head>
+	<body>
+		{% block content %}
+			<h2>{{ post_detail.title }}</h2>
+			<p>{{ post_detail.body }}</p>
+		{% endblock %}
+	</body>
+</html>
