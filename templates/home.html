@@ -9,8 +9,8 @@
 		{% block content %}
 			<ul>
 				{% for post in posts_list %}
-					<li><a href="/detail/{{ post.id }}">{{ post.title }}</a></li>
-					<p>{{ post.body }}</p>
+					<li><a href="/post/detail/{{ post.id }}">{{ post.title }}</a></li>
+					<p>{{ post.body|safe|truncatewords:"10" }}</p>
 				{% endfor %}
 			</ul>
 		{% endblock %}

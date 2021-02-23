@@ -9,6 +9,8 @@
 		{% block content %}
 			<h2>{{ post_detail.title }}</h2>
 			<p>{{ post_detail.body }}</p>
+			<a href="/post/update/{{post_detail.id}}/">Update Post</a>
+			<a href="/post/delete/{{post_detail.id}}">Delete</a>
 		{% endblock %}
 	</body>
 </html>

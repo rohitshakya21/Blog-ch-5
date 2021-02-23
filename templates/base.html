@@ -8,6 +8,9 @@
 	<body>
 		
 		<h1>Django Blog</h1>
+		<div class="nav-right">
+			<a href="{% url 'new-post' %}">Create New Post</a>
+		</div>
 		{% block content %}
 		{% endblock %}
 		
