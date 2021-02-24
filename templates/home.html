@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,12 +6,16 @@
 	</head>
 	<body>
 		{% block content %}
-			<ul>
-				{% for post in posts_list %}
-					<li><a href="/post/detail/{{ post.id }}">{{ post.title }}</a></li>
-					<p>{{ post.body|safe|truncatewords:"10" }}</p>
-				{% endfor %}
-			</ul>
+			<div class="Jumbotron">
+				{% if user.is_authenticated %}
+					<ul>
+						{% for post in posts_list %}
+							<li><a href="/post/detail/{{ post.id }}">{{ post.title }}</a></li>
+							<p>{{ post.body|safe|truncatewords:"10" }}</p>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			</div>
 		{% endblock %}
 	</body>
 </html>

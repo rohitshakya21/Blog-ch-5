@@ -1,5 +1,4 @@
 {% extends 'base.html' %}
-{% load static %}
 <!DOCTYPE html>
 <html>
 	<head>
@@ -7,10 +6,12 @@
 	</head>
 	<body>
 		{% block content %}
-			<h2>{{ post_detail.title }}</h2>
-			<p>{{ post_detail.body }}</p>
-			<a href="/post/update/{{post_detail.id}}/">Update Post</a>
-			<a href="/post/delete/{{post_detail.id}}">Delete</a>
+			{% if user.is_authenticated %}
+				<h2>{{ post_detail.title }}</h2>
+				<p>{{ post_detail.body }}</p>
+				<a href="/post/update/{{post_detail.id}}/">Update Post</a>
+				<a href="/post/delete/{{post_detail.id}}">Delete</a>
+			{% endif %}
 		{% endblock %}
 	</body>
 </html>
